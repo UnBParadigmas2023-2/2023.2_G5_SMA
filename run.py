@@ -6,9 +6,23 @@ num_virus = 100
 largura = 10
 altura = 10
 num_passos = 10
+escolha_virus = 1
+
+# Exibir o menu
+print("Escolha o tipo de vírus:")
+print("0 - Vírus Normal")
+print("1 - Corote-23 (potente)")
+
+# Obter a escolha do usuário
+escolha_virus = int(input("Digite o número correspondente ao vírus desejado: "))
+
+# Verificar se a escolha é válida
+if escolha_virus not in [0, 1]:
+    print("Escolha inválida. Por favor, digite 0 ou 1.")
+    exit()
 
 # Instância do modelo
-modelo_sistema_imunologico = ModeloSistemaImunologico(num_celulas_imunes, num_virus, largura, altura)
+modelo_sistema_imunologico = ModeloSistemaImunologico(num_celulas_imunes, num_virus, largura, altura, escolha_virus)
 for _ in range(num_passos):
     modelo_sistema_imunologico.step()
 
