@@ -6,7 +6,6 @@ num_virus = 100
 largura = 10
 altura = 10
 num_passos = 10
-escolha_virus = 1
 
 # Exibir o menu
 print("Escolha o tipo de vírus:")
