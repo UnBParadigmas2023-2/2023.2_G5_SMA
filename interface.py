@@ -9,8 +9,9 @@ def executar_simulacao(escolha_virus):
     largura = 10
     altura = 10
     num_passos = 10
+    num_vacinas = 5
 
-    modelo = ModeloSistemaImunologico(num_celulas_imunes, num_virus, largura, altura, escolha_virus)
+    modelo = ModeloSistemaImunologico(num_celulas_imunes, num_virus,num_vacinas, largura, altura, escolha_virus)
     for _ in range(num_passos):
         modelo.step()
 

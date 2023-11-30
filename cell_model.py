@@ -27,14 +27,21 @@ class AgenteCelulaImune(mesa.Agent):
             # A célula imunológica pode encontrar um Vírus e tentar combatê-lo
             vizinhos = self.model.grid.get_neighbors(self.pos, moore=True, radius=1)
             for vizinho in vizinhos:
-                if isinstance(vizinho, Agentevirus):
-                    # Se o Vírus estiver presente, tenta combatê-lo
-                    if random.random() < 0.4:  # 40% de chance de combater com sucesso o Vírus
-                        print(f"Célula imunológica {self.unique_id} combateu um Vírus!")
-                        self.remove_agent(vizinho)  # Remove o Vírus do modelo
-                    else:
-                        print(f"Célula imunológica {self.unique_id} falhou ao combater o Vírus.")
-                        self.estado = "infectada"
+               if isinstance(vizinho, Agentevirus):
+                # Lógica do combate ao vírus
+                probabilidade_combate = 0.2  # 40% de chance de combate sem considerar a vacina
+
+                # Verificar a presença de vacina e ajustar a probabilidade de combate
+                vacinas = [vizinho for vizinho in self.model.grid.get_neighbors(self.pos, moore=True, radius=1, include_center=False) if isinstance(vizinho, AgenteVacina)]
+                for vacina in vacinas:
+                    probabilidade_combate *= 0.95  # Redução de 20% na probabilidade de combate com a presença da vacina
+
+                if random.random() < probabilidade_combate:
+                    print(f"Célula imunológica {self.unique_id} combateu um Vírus!")
+                    self.remove_agent(vizinho)  # Remove o Vírus do modelo
+                else:
+                    print(f"Célula imunológica {self.unique_id} falhou ao combater o Vírus.")
+                    self.estado = "infectada"
                 if isinstance(vizinho, Corote_23):
                     # Se o Vírus estiver presente, tenta combatê-lo
                     if random.random() < 0.1:  # 10% de chance de combater com sucesso o Vírus
@@ -67,12 +74,28 @@ class AgenteCelulaImune(mesa.Agent):
                 #     self.grid.place_agent(virus, (x, y))
                 #     self.schedule.add(virus)
 
+class AgenteVacina(mesa.Agent):
+    def __init__(self, identificador_unico, modelo):
+        super().__init__(identificador_unico, modelo)
+
+    def step(self):
+        # Lógica do comportamento da vacina (por exemplo, reduzir a contaminação dos vírus)
+        pass
+
 class Agentevirus(mesa.Agent):
 
     def __init__(self, identificador_unico, modelo):
         super().__init__(identificador_unico, modelo)
 
     def step(self):
+
+        vacinas = [vizinho for vizinho in self.model.grid.get_neighbors(self.pos, moore=True, radius=1, include_center=False) if isinstance(vizinho, AgenteVacina)]
+        for vacina in vacinas:
+            # Aplique a lógica de redução da contaminação aqui
+            # Por exemplo, reduza a probabilidade de contaminação
+            probabilidade_contaminacao = 50  # Valor inicial de probabilidade
+            probabilidade_contaminacao *= 0.95  # Redução pela metade com a presença da vacina
+
         # O comportamento do Vírus é multiplicar
         novo_virus = Agentevirus(str(uuid.uuid4()), self.model)
         x = self.random.randrange(self.model.grid.width)
@@ -94,7 +117,7 @@ class Corote_23(mesa.Agent):
 
 class ModeloSistemaImunologico(mesa.Model):
 
-    def __init__(self, num_celulas_imunes, num_virus, largura, altura, escolha_virus):
+    def __init__(self, num_celulas_imunes, num_virus,num_vacinas, largura, altura, escolha_virus):
         self.num_celulas_imunes = num_celulas_imunes
         self.num_virus = num_virus
         self.schedule = mesa.time.RandomActivation(self)
@@ -109,6 +132,14 @@ class ModeloSistemaImunologico(mesa.Model):
             y = self.random.randrange(self.grid.height)
             self.grid.place_agent(celula_imune, (x, y))
             self.schedule.add(celula_imune)
+
+        # criar vacina
+        for _ in range(num_vacinas):
+            vacina = AgenteVacina(str(uuid.uuid4()), self)
+            x = self.random.randrange(self.grid.width)
+            y = self.random.randrange(self.grid.height)
+            self.grid.place_agent(vacina, (x, y))
+            self.schedule.add(vacina)
 
         # Criar Vírus
         for _ in range(self.num_virus): 
