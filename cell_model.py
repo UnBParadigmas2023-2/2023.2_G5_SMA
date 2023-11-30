@@ -20,36 +20,46 @@ class AgenteCelulaImune(mesa.Agent):
             self.model.grid.remove_agent(agent)
             self.model.schedule.remove(agent)
 
+    def deve_ativar(self):
+        # Implemente a lógica aqui. Por exemplo, verificar a presença de um vírus.
+        # Neste exemplo, é uma escolha aleatória.
+        return random.choice([True, False])
+
+
     def step(self):
         # O comportamento da célula imunológica
         # A célula imunológica pode estar "saudável" ou "infectada".
         if self.estado == "saudavel":
-            # A célula imunológica pode encontrar um Vírus e tentar combatê-lo
+            if self.deve_ativar():
+                print(f"Célula imunológica {self.unique_id} está ativada!")
+                self.estado = "ativada" # a célula pode ser ativada ou não aleatóriamente
+                # A célula imunológica pode encontrar um Vírus e tentar combatê-lo
             vizinhos = self.model.grid.get_neighbors(self.pos, moore=True, radius=1)
             for vizinho in vizinhos:
                if isinstance(vizinho, Agentevirus):
-                # Lógica do combate ao vírus
-                probabilidade_combate = 0.2  # 40% de chance de combate sem considerar a vacina
-
+                    if self.estado == "ativada":
+                        probabilidade_combate = 0.35  # Aumenta para 60% se ativada
+                    else:
+                        probabilidade_combate = 0.2 # 20% de chance de combate sem considerar a vacina
                 # Verificar a presença de vacina e ajustar a probabilidade de combate
-                vacinas = [vizinho for vizinho in self.model.grid.get_neighbors(self.pos, moore=True, radius=1, include_center=False) if isinstance(vizinho, AgenteVacina)]
-                for vacina in vacinas:
-                    probabilidade_combate *= 0.95  # Redução de 20% na probabilidade de combate com a presença da vacina
+                    vacinas = [vizinho for vizinho in self.model.grid.get_neighbors(self.pos, moore=True, radius=1, include_center=False) if isinstance(vizinho, AgenteVacina)]
+                    for vacina in vacinas:
+                        probabilidade_combate *= 0.95  # Redução de 20% na probabilidade de combate com a presença da vacina
 
-                if random.random() < probabilidade_combate:
-                    print(f"Célula imunológica {self.unique_id} combateu um Vírus!")
-                    self.remove_agent(vizinho)  # Remove o Vírus do modelo
-                else:
-                    print(f"Célula imunológica {self.unique_id} falhou ao combater o Vírus.")
-                    self.estado = "infectada"
-                if isinstance(vizinho, Corote_23):
-                    # Se o Vírus estiver presente, tenta combatê-lo
-                    if random.random() < 0.1:  # 10% de chance de combater com sucesso o Vírus
+                    if random.random() < probabilidade_combate:
                         print(f"Célula imunológica {self.unique_id} combateu um Vírus!")
                         self.remove_agent(vizinho)  # Remove o Vírus do modelo
                     else:
                         print(f"Célula imunológica {self.unique_id} falhou ao combater o Vírus.")
                         self.estado = "infectada"
+                    if isinstance(vizinho, Corote_23):
+                        # Se o Vírus estiver presente, tenta combatê-lo
+                        if random.random() < 0.1:  # 10% de chance de combater com sucesso o Vírus
+                            print(f"Célula imunológica {self.unique_id} combateu um Vírus!")
+                            self.remove_agent(vizinho)  # Remove o Vírus do modelo
+                        else:
+                            print(f"Célula imunológica {self.unique_id} falhou ao combater o Vírus.")
+                            self.estado = "infectada"
 
         elif self.estado == "infectada":
             # A célula imunológica tenta combater a infecção
