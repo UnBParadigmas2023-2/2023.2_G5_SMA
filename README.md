@@ -58,7 +58,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Matheus Soares | - <Escreva sua contribuição> | Excelente |
-| Pedro Henrique Nogueira | - <Escreva sua contribuição> | Excelente |
+| Pedro Henrique Nogueira | -  Criação do Novo Virus | Boa |
 | Guilherme Keyti Cabral Kishimoto | - <Escreva sua contribuição>  | Excelente |
 | Arthur Taylor |- <Escreva sua contribuição>  | Excelente |
 | Iago Cabral | - <Escreva sua contribuição> | Excelente |
