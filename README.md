@@ -1,51 +1,47 @@
-# RepositorioTemplate
-Esse repositório é para ser utilizado pelos grupos como um template inicial, da home page do Projeto.
-As seções do Template NÃO DEVEM SER OMITIDAS, sendo TODAS RELEVANTES.
-
-**!! *Atenção: Renomeie o seu repositório para (Ano.Semestre)_(Grupo)_(Paradigma)_(NomeDoProjeto)*. !!** 
-
-Paradigmas:
- - Funcional
- - Logico
- - SMA
-
-**!! *Não coloque os nomes dos alunos no título do repositório*. !!**
-
-**!! *Exemplo de título correto: 2023.2_G1_Logico_ProjetoRoteirosAereos*. !!**
- 
- (Apague esses comentários)
-
-# NomeDoProjeto
+# Contagion
 
 **Disciplina**: FGA0210 - PARADIGMAS DE PROGRAMAÇÃO - T01 <br>
-**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: XX<br>
-**Paradigma**: XXXXXXXXXX<br>
+**Nro do Grupo (de acordo com a Planilha de Divisão dos Grupos)**: G5<br>
+**Paradigma**: SMA <br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 19/0094486  | Pedro Henrique Nogueira |
+| 19/0088257  | Guilherme Keyti Cabral Kishimoto|
+| 19/0093480  | Matheus Soares Arruda|
+| 19/0084642  | Arthur Taylor|
+| 19/0088745  | Iago Cabral|
+| 19/0042532  | Felipe Alef|
+| 20/0042360  | Nicolas Roberto|
+| 19/0096071  | Thiago Oliveira|
+| 20/2063346  | José Filipi Brito|  
 
 ## Sobre 
-Descreva o seu projeto em linhas gerais. 
-Use referências, links, que permitam conhecer um pouco mais sobre o projeto.
-Capriche nessa seção, pois ela é a primeira a ser lida pelos interessados no projeto.
+O projeto tem como base a criação de um simulador de contaminação, no qual é possível observar a resposta das células imunológicas diante de uma infecção viral. O objetivo principal é apresentar, por meio de gráficos, a evolução do combate das células do sistema imunológico contra o vírus, proporcionando uma visualização do processo de defesa do organismo.
 
 ## Screenshots
-Adicione 2 ou mais screenshots do projeto em termos de interface e/ou funcionamento.
+![Gráfico Inicial](https://github.com/UnBParadigmas2023-2/2023.2_G5_SMA/assets/66215835/a198e431-dacd-492a-9ed2-49ab4303464f)
+![Simulação do Vírus normal](https://github.com/UnBParadigmas2023-2/2023.2_G5_SMA/assets/66215835/0ef92ffc-605f-4da9-9263-9d770d13e790)
+![Simulação do Vírus Corote-23](https://github.com/UnBParadigmas2023-2/2023.2_G5_SMA/assets/66215835/a7436f41-6f1b-415b-b65d-caebde55a378)
+
 
 ## Instalação 
-**Linguagens**: xxxxxx<br>
-**Tecnologias**: xxxxxx<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
-Insira um manual ou um script para auxiliar ainda mais.
-Gifs animados e outras ilustrações são bem-vindos!
+**Linguagens**: Python<br>
+**Tecnologias**: TKinter<br>
+``` bash
+sudo apt-get update
+```
+``` bash
+sudo apt-get install python3-tk
+```
 
 ## Uso 
-Explique como usar seu projeto.
-Procure ilustrar em passos, com apoio de telas do software, seja com base na interface gráfica, seja com base no terminal.
-Nessa seção, deve-se revelar de forma clara sobre o funcionamento do software.
+Para rodar nosso arquivo interface.py, basta fazer o seguinte:
+
+``` bash
+python3 interface.py 
+```
 
 ## Vídeo
 Adicione 1 ou mais vídeos com a execução do projeto.
@@ -61,15 +57,29 @@ TEMPO: +/- 15min
 Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
-| Fulano  |  Programação dos Fatos da Base de Conhecimento Lógica | Boa |
+| Matheus Soares | - <Escreva sua contribuição> | Excelente |
+| Pedro Henrique Nogueira | - <Escreva sua contribuição> | Excelente |
+| Guilherme Keyti Cabral Kishimoto | - <Escreva sua contribuição>  | Excelente |
+| Arthur Taylor |- <Escreva sua contribuição>  | Excelente |
+| Iago Cabral | - <Escreva sua contribuição> | Excelente |
+| Felipe Alef | - <Escreva sua contribuição> | Excelente |
+| Nicolas Roberto | - Criação da apresentação do projeto no Readme | Excelente |
+|  Thiago Oliveira | - <Escreva sua contribuição>   | Excelente |
+|  José Filipi Brito | - <Escreva sua contribuição> | Excelente |
 
 ## Outros 
-Quaisquer outras informações sobre o projeto podem ser descritas aqui. Não esqueça, entretanto, de informar sobre:
-(i) Lições Aprendidas;
-(ii) Percepções;
-(iii) Contribuições e Fragilidades, e
-(iV) Trabalhos Futuros.
+
+### Lições Aprendidas
+- Definir protocolos de comunicação claros: Estabelecer padrões de comunicação entre os agentes é essencial para garantir uma colaboração eficiente e a troca de informações necessárias.
+- Desenvolver uma compreensão profunda do ambiente: Entender completamente o ambiente em que os agentes operarão é crucial para projetar interações eficazes e estratégias de tomada de decisão.
+
+### Contribuições
+- Implementação do sistema de simulação: Conseguimos criar um simulador de combate a alguns vírus que permite simular como os sistema imunológico reagiria a um vírus específico.
+  
+### Fragilidades
+
+
+### Possíveis Melhorias
+- Aumentar as opções de vírus: Adicionar outros tipos de vírus para tornar o projeto mais completo e informatívo, ex: Adenovirus (pneumonia) e Retrovírus (HIV).
 
 ## Fontes
-Referencie, adequadamente, as referências utilizadas.
-Indique ainda sobre fontes de leitura complementares.
