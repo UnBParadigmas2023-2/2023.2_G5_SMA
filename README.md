@@ -62,7 +62,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Guilherme Keyti Cabral Kishimoto | - Criação da interface grafica | Boa |
 | Arthur Taylor |- Criação da lógica de vacina para o vírus normal  | Boa |
 | Iago Cabral | -Criação da interface grafica | Boa |
-| Felipe Alef | - <Escreva sua contribuição> | Excelente |
+| Felipe Alef | -  Criação de novo estado para celula imune que ajuda no combate ao vírus| Boa |
 | Nicolas Roberto | - Criação da apresentação do projeto no Readme | Excelente |
 |  Thiago Oliveira | - <Escreva sua contribuição>   | Excelente |
 |  José Filipi Brito | - <Escreva sua contribuição> | Excelente |
