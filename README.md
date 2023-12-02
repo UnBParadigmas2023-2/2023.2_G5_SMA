@@ -65,7 +65,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 | Felipe Alef | -  Criação de novo estado para celula imune que ajuda no combate ao vírus| Boa |
 | Nicolas Roberto | - Criação da apresentação do projeto no Readme | Excelente |
 |  Thiago Oliveira | - Criação da lógica de vacina para o corote-23  | Boa |
-|  José Filipi Brito | - <Escreva sua contribuição> | Excelente |
+|  José Filipi Brito | - Desenvolvimento da estrutura base dos agentes célula e vírus e do arquivo run | Excelente |
 
 ## Outros 
 
