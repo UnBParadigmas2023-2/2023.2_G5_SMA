@@ -83,3 +83,4 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 - Aumentar as opções de vírus: Adicionar outros tipos de vírus para tornar o projeto mais completo e informatívo, ex: Adenovirus (pneumonia) e Retrovírus (HIV).
 
 ## Fontes
+- Documentação do mesa: https://mesa.readthedocs.io/en/stable/
