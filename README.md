@@ -58,7 +58,7 @@ Apresente, brevemente, como cada membro do grupo contribuiu para o projeto.
 |Nome do Membro | Contribuição | Significância da Contribuição para o Projeto (Excelente/Boa/Regular/Ruim/Nula) |
 | -- | -- | -- |
 | Matheus Soares | - Criação do Novo Virus <br> - Tentativa de GUI <br> - Tentativa de infecção generalizada do vírus | Boa |
-| Pedro Henrique Nogueira | -  Criação do Novo Virus | Boa |
+| Pedro Henrique Nogueira | - Criação do Novo Virus <br> - Tentativa de GUI <br> - Tentativa de infecção generalizada do víru | Boa |
 | Guilherme Keyti Cabral Kishimoto | - <Escreva sua contribuição>  | Excelente |
 | Arthur Taylor |- Criação da lógica de vacina para o vírus normal  | Boa |
 | Iago Cabral | - <Escreva sua contribuição> | Excelente |
